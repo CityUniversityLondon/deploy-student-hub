@@ -16640,6 +16640,7 @@ input[type="checkbox"]:checked + .header-toggle .header-toggle__content {
     width: calc(100% + 1rem);
     margin-left: -0.5rem;
     margin-right: -0.5rem;
+    background-color: #ffffff;
 }
 
 .left-hand-navigation-grid > div > div:before, .left-hand-navigation-grid > div > div:after {
