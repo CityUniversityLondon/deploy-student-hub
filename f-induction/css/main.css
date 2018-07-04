@@ -24298,6 +24298,10 @@ table tbody > tr > td:hover {
     }
 }
 
+.induction__header p + p span {
+    font-weight: 600;
+}
+
 .anchor-demo-list li {
     padding: 1rem;
 }
