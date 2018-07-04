@@ -24117,6 +24117,24 @@ table tbody > tr > td:hover {
 }
 
 .induction__events__event .induction__events__details {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    clear: both;
+    zoom: 1;
+    float: left;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
     background: #3a0133;
     border-bottom: 2px solid #0c0c0e;
     color: #ffffff;
@@ -24126,7 +24144,59 @@ table tbody > tr > td:hover {
     margin-right: -1rem;
     margin-top: -1rem;
     padding: 0.5rem;
-    width: calc(100% + 4rem);
+    width: calc(100% + 2rem);
+}
+
+.induction__events__event .induction__events__details:before, .induction__events__event .induction__events__details:after {
+    content: "";
+    display: block;
+}
+
+.induction__events__event .induction__events__details:after {
+    clear: both;
+}
+
+@supports (display: flex) {
+    .induction__events__event .induction__events__details {
+        float: none;
+    }
+}
+
+.induction__events__event .induction__events__details .induction__events__time,
+.induction__events__event .induction__events__details .induction__events__restriction {
+    /** TODO: Is min height necessary? **/
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+}
+
+@supports (display: flex) {
+    .induction__events__event .induction__events__details .induction__events__time,
+    .induction__events__event .induction__events__details .induction__events__restriction {
+        float: none;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction__events__event .induction__events__details .induction__events__time,
+    .induction__events__event .induction__events__details .induction__events__restriction {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction__events__event .induction__events__details .induction__events__time,
+    .induction__events__event .induction__events__details .induction__events__restriction {
+        width: 50%;
+    }
+}
+
+.induction__events__event .induction__events__details .induction__events__restriction {
+    text-align: right;
 }
 
 .induction__events__event .induction__events__facilitators {
