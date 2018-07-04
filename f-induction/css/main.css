@@ -24102,7 +24102,7 @@ table tbody > tr > td:hover {
     font-weight: 700;
 }
 
-.induction__events li {
+.induction__events__event {
     -webkit-box-shadow: 0 0 1.5rem 3px rgba(0, 0, 0, 0.15);
             box-shadow: 0 0 1.5rem 3px rgba(0, 0, 0, 0.15);
     margin-bottom: 1rem;
@@ -24111,9 +24111,19 @@ table tbody > tr > td:hover {
 }
 
 @media (max-width: 900px) {
-    .induction__events li {
+    .induction__events__event {
         margin-right: 0.5rem;
     }
+}
+
+.induction__events__event .induction__events__details {
+    background: #3a0133;
+    border-bottom: 2px solid #0c0c0e;
+    color: #ffffff;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    margin-top: -1rem;
+    padding: 0.5rem;
 }
 
 .anchor-demo-list li {
