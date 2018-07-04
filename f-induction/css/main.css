@@ -24126,6 +24126,11 @@ table tbody > tr > td:hover {
     margin-right: -1rem;
     margin-top: -1rem;
     padding: 0.5rem;
+    width: calc(100% + 4rem);
+}
+
+.induction__events__event .induction__events__facilitators {
+    font-size: 14px;
 }
 
 .anchor-demo-list li {
