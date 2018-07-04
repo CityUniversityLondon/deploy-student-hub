@@ -24105,8 +24105,8 @@ table tbody > tr > td:hover {
 .induction__events li {
     -webkit-box-shadow: 0 0 1.5rem 3px rgba(0, 0, 0, 0.15);
             box-shadow: 0 0 1.5rem 3px rgba(0, 0, 0, 0.15);
-    margin-right: 2rem;
     margin-bottom: 1rem;
+    margin-right: 2rem;
     padding: 1rem;
 }
 
