@@ -24206,7 +24206,7 @@ table tbody > tr > td:hover {
 }
 
 .induction__events__event .induction__events__optional {
-    background: #ececec;
+    background: #f2f2f2;
     border-top: 2px solid #d0cfcb;
     color: #0c0c0e;
     font-size: 1.2rem;
