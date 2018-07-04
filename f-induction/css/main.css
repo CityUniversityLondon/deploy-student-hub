@@ -24223,6 +24223,81 @@ table tbody > tr > td:hover {
     font-size: 14px;
 }
 
+.induction__header {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    clear: both;
+    zoom: 1;
+    float: left;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+.induction__header:before, .induction__header:after {
+    content: "";
+    display: block;
+}
+
+.induction__header:after {
+    clear: both;
+}
+
+@supports (display: flex) {
+    .induction__header {
+        float: none;
+    }
+}
+
+.induction__header p {
+    /** TODO: Is min height necessary? **/
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+}
+
+@supports (display: flex) {
+    .induction__header p {
+        float: none;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction__header p {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction__header p {
+        width: 50%;
+    }
+}
+
+.induction__header p + p {
+    text-align: right;
+}
+
+@media (max-width: 900px) {
+    .induction__header p + p {
+        text-align: left;
+    }
+}
+
 .anchor-demo-list li {
     padding: 1rem;
 }
