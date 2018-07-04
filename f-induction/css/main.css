@@ -24199,6 +24199,12 @@ table tbody > tr > td:hover {
     text-align: right;
 }
 
+@media (max-width: 900px) {
+    .induction__events__event .induction__events__details .induction__events__restriction {
+        text-align: left;
+    }
+}
+
 .induction__events__event .induction__events__facilitators {
     font-size: 14px;
 }
