@@ -24302,6 +24302,36 @@ table tbody > tr > td:hover {
     font-weight: 600;
 }
 
+.induction__events__facilitator-list {
+    /** TODO: Is min height necessary? **/
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+    border-top: 1px solid #ececec;
+}
+
+@supports (display: flex) {
+    .induction__events__facilitator-list {
+        float: none;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction__events__facilitator-list {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction__events__facilitator-list {
+        width: 100%;
+    }
+}
+
 .induction__event__attendance {
     width: 100%;
     margin-left: auto;
