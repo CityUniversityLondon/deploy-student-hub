@@ -24418,6 +24418,35 @@ table tbody > tr > td:hover {
     }
 }
 
+.induction__event__location {
+    /** TODO: Is min height necessary? **/
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+}
+
+@supports (display: flex) {
+    .induction__event__location {
+        float: none;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction__event__location {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction__event__location {
+        width: 100%;
+    }
+}
+
 .anchor-demo-list li {
     padding: 1rem;
 }
