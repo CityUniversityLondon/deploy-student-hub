@@ -24322,6 +24322,7 @@ table tbody > tr > td:hover {
     margin-left: -0.5rem;
     margin-right: -0.5rem;
     font-size: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .induction__event__attendance:before, .induction__event__attendance:after {
@@ -24372,7 +24373,12 @@ table tbody > tr > td:hover {
     }
 }
 
+.induction__event__attendance .induction__events__optional {
+    font-weight: 600;
+}
+
 .induction__event__attendance .induction__events__restriction {
+    font-weight: 600;
     text-align: right;
 }
 
