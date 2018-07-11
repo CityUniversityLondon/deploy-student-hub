@@ -24463,6 +24463,7 @@ table tbody > tr > td:hover {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
     position: relative;
+    font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
 }
@@ -24489,6 +24490,7 @@ table tbody > tr > td:hover {
 }
 
 .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__name .induction__event__facilitator__jobtitle {
+    font-family: "PT Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-weight: 400;
 }
