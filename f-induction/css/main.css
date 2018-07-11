@@ -24578,6 +24578,11 @@ table tbody > tr > td:hover {
     }
 }
 
+.induction__event__back {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
 .anchor-demo-list li {
     padding: 1rem;
 }
