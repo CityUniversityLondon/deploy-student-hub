@@ -24516,7 +24516,9 @@ table tbody > tr > td:hover {
     width: calc(100% + 1rem);
     margin-left: -0.5rem;
     margin-right: -0.5rem;
+    font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
+    font-weight: 600;
     margin-bottom: 1rem;
 }
 
@@ -24569,7 +24571,6 @@ table tbody > tr > td:hover {
 }
 
 .induction__event__attendance .induction__events__restriction {
-    font-weight: 600;
     text-align: right;
 }
 
