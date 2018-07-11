@@ -24351,6 +24351,7 @@ table tbody > tr > td:hover {
     width: calc(100% + 1rem);
     margin-left: -0.5rem;
     margin-right: -0.5rem;
+    list-style-type: none;
 }
 
 .induction__events__facilitator-list .induction__event__facilitator:before, .induction__events__facilitator-list .induction__event__facilitator:after {
