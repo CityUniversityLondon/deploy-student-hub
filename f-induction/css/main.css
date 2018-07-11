@@ -4305,17 +4305,19 @@ button:active,
 }
 
 .button--icon, .site-search__button, .student-news-finder .query-box__button, .student-events-finder .query-box__button, .service-finder .query-box__button,
-.service-finder-nest .query-box__button, .noticeboard-finder .query-box__button {
+.service-finder-nest .query-box__button, .noticeboard-finder .query-box__button, .induction-timetable-finder .query-box__button,
+.induction-timetable-finder-nest .query-box__button {
     background: #33cbb4;
     color: #0c0c0e;
 }
 
 .button--icon:hover, .site-search__button:hover, .student-news-finder .query-box__button:hover, .student-events-finder .query-box__button:hover, .service-finder .query-box__button:hover,
-.service-finder-nest .query-box__button:hover, .noticeboard-finder .query-box__button:hover {
+.service-finder-nest .query-box__button:hover, .noticeboard-finder .query-box__button:hover, .induction-timetable-finder .query-box__button:hover,
+.induction-timetable-finder-nest .query-box__button:hover {
     background-color: #2db39e;
 }
 
-.button--icon span, .site-search__button span, .student-news-finder .query-box__button span, .student-events-finder .query-box__button span, .service-finder .query-box__button span, .service-finder-nest .query-box__button span, .noticeboard-finder .query-box__button span {
+.button--icon span, .site-search__button span, .student-news-finder .query-box__button span, .student-events-finder .query-box__button span, .service-finder .query-box__button span, .service-finder-nest .query-box__button span, .noticeboard-finder .query-box__button span, .induction-timetable-finder .query-box__button span, .induction-timetable-finder-nest .query-box__button span {
     background: transparent;
 }
 
@@ -24615,6 +24617,842 @@ table tbody > tr > td:hover {
 .induction__event__back {
     margin-bottom: 1rem;
     margin-top: 1rem;
+}
+
+.induction-timetable-finder {
+    margin-top: -2rem;
+    overflow-x: hidden;
+}
+
+.induction-timetable-finder .induction-timetable-finder__wrapper {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    clear: both;
+    zoom: 1;
+    float: left;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    min-height: 15.5rem;
+}
+
+.induction-timetable-finder .induction-timetable-finder__wrapper:before, .induction-timetable-finder .induction-timetable-finder__wrapper:after {
+    content: "";
+    display: block;
+}
+
+.induction-timetable-finder .induction-timetable-finder__wrapper:after {
+    clear: both;
+}
+
+@supports (display: flex) {
+    .induction-timetable-finder .induction-timetable-finder__wrapper {
+        float: none;
+    }
+}
+
+.induction-timetable-finder .induction-timetable-finder__search-form,
+.induction-timetable-finder-nest .induction-timetable-finder__search-form {
+    /** TODO: Is min height necessary? **/
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+}
+
+@supports (display: flex) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        float: none;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        width: 50%;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        left: 0;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        left: 25%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        /** TODO: Is min height necessary? **/
+        float: left;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        position: relative;
+    }
+    @supports (display: flex) {
+        .induction-timetable-finder .induction-timetable-finder__search-form,
+        .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+            float: none;
+            -webkit-box-flex: 0;
+                -ms-flex: 0 1 auto;
+                    flex: 0 1 auto;
+        }
+    }
+}
+
+@media (max-width: 1200px) and (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        width: 83.333%;
+    }
+}
+
+@media (max-width: 1200px) and (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        left: 0;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        left: 8.333%;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        /** TODO: Is min height necessary? **/
+        float: left;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        position: relative;
+    }
+    @supports (display: flex) {
+        .induction-timetable-finder .induction-timetable-finder__search-form,
+        .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+            float: none;
+            -webkit-box-flex: 0;
+                -ms-flex: 0 1 auto;
+                    flex: 0 1 auto;
+        }
+    }
+}
+
+@media (max-width: 900px) and (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        width: 100%;
+    }
+}
+
+@supports (display: flex) {
+    .induction-timetable-finder .induction-timetable-finder__search-form,
+    .induction-timetable-finder-nest .induction-timetable-finder__search-form {
+        -ms-flex-item-align: center;
+            align-self: center;
+    }
+}
+
+.induction-timetable-finder .induction-timetable-finder__top,
+.induction-timetable-finder-nest .induction-timetable-finder__top {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    clear: both;
+    zoom: 1;
+    float: left;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    min-height: 10.5rem;
+}
+
+.induction-timetable-finder .induction-timetable-finder__top:before, .induction-timetable-finder .induction-timetable-finder__top:after,
+.induction-timetable-finder-nest .induction-timetable-finder__top:before,
+.induction-timetable-finder-nest .induction-timetable-finder__top:after {
+    content: "";
+    display: block;
+}
+
+.induction-timetable-finder .induction-timetable-finder__top:after,
+.induction-timetable-finder-nest .induction-timetable-finder__top:after {
+    clear: both;
+}
+
+@supports (display: flex) {
+    .induction-timetable-finder .induction-timetable-finder__top,
+    .induction-timetable-finder-nest .induction-timetable-finder__top {
+        float: none;
+    }
+}
+
+.induction-timetable-finder .induction-timetable-finder__search-form,
+.induction-timetable-finder-nest .induction-timetable-finder__search-form {
+    display: block;
+    margin: 3.5rem 0.5rem 0;
+    position: relative;
+    text-align: left;
+}
+
+.induction-timetable-finder .query-box__label,
+.induction-timetable-finder-nest .query-box__label {
+    color: #ffffff;
+    display: block;
+    font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-left: 0.5rem;
+}
+
+.induction-timetable-finder .query-box__query,
+.induction-timetable-finder-nest .query-box__query {
+    font-family: "PT Sans", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    height: 3rem;
+    margin: 0 0 0 0.5rem;
+    padding: 0.5rem;
+    vertical-align: top;
+    width: 83.333%;
+}
+
+@media (max-width: 320px) {
+    .induction-timetable-finder .query-box__query,
+    .induction-timetable-finder-nest .query-box__query {
+        width: 75%;
+    }
+}
+
+.induction-timetable-finder .query-box__query:focus,
+.induction-timetable-finder-nest .query-box__query:focus {
+    outline: 2px solid #33cbb4;
+}
+
+.induction-timetable-finder .query-box__button,
+.induction-timetable-finder-nest .query-box__button {
+    width: 3rem;
+    height: 3rem;
+    vertical-align: top;
+}
+
+.induction-timetable-finder .query-box__button span:before,
+.induction-timetable-finder-nest .query-box__button span:before {
+    font-family: "FontAwesome";
+    content: "";
+    font-size: 1.44rem;
+    font-weight: 700;
+    line-height: 1.44rem;
+}
+
+.induction-timetable-finder .induction-timetable-finder__main,
+.induction-timetable-finder-nest .induction-timetable-finder__main {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    clear: both;
+    zoom: 1;
+    float: left;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    background-color: #ececec;
+    padding-bottom: 2rem;
+}
+
+.induction-timetable-finder .induction-timetable-finder__main:before, .induction-timetable-finder .induction-timetable-finder__main:after,
+.induction-timetable-finder-nest .induction-timetable-finder__main:before,
+.induction-timetable-finder-nest .induction-timetable-finder__main:after {
+    content: "";
+    display: block;
+}
+
+.induction-timetable-finder .induction-timetable-finder__main:after,
+.induction-timetable-finder-nest .induction-timetable-finder__main:after {
+    clear: both;
+}
+
+@supports (display: flex) {
+    .induction-timetable-finder .induction-timetable-finder__main,
+    .induction-timetable-finder-nest .induction-timetable-finder__main {
+        float: none;
+    }
+}
+
+.induction-timetable-finder .induction-timetable-finder__results__count,
+.induction-timetable-finder-nest .induction-timetable-finder__results__count {
+    /** TODO: Is min height necessary? **/
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 1rem;
+    width: 100%;
+}
+
+@supports (display: flex) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        float: none;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        width: 50%;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        left: 0;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        left: 25%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        /** TODO: Is min height necessary? **/
+        float: left;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        position: relative;
+    }
+    @supports (display: flex) {
+        .induction-timetable-finder .induction-timetable-finder__results__count,
+        .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+            float: none;
+            -webkit-box-flex: 0;
+                -ms-flex: 0 1 auto;
+                    flex: 0 1 auto;
+        }
+    }
+}
+
+@media (max-width: 1200px) and (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        width: 83.333%;
+    }
+}
+
+@media (max-width: 1200px) and (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        left: 0;
+    }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        left: 8.333%;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        /** TODO: Is min height necessary? **/
+        float: left;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        position: relative;
+    }
+    @supports (display: flex) {
+        .induction-timetable-finder .induction-timetable-finder__results__count,
+        .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+            float: none;
+            -webkit-box-flex: 0;
+                -ms-flex: 0 1 auto;
+                    flex: 0 1 auto;
+        }
+    }
+}
+
+@media (max-width: 900px) and (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        width: 100%;
+    }
+}
+
+@media (max-width: 900px) and (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder__results__count,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__count {
+        width: 100%;
+    }
+}
+
+.induction-timetable-finder .induction-timetable-finder__results__count span span,
+.induction-timetable-finder-nest .induction-timetable-finder__results__count span span {
+    font-weight: 600;
+}
+
+.induction-timetable-finder .induction-timetable-finder__results__refresh,
+.induction-timetable-finder-nest .induction-timetable-finder__results__refresh {
+    display: inline-block;
+    color: #33cbb4;
+    margin-left: 0.5rem;
+}
+
+.induction-timetable-finder .fade-out,
+.induction-timetable-finder-nest .fade-out {
+    opacity: 0;
+    pointer-events: none;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    -webkit-animation: fade-out 1s linear;
+            animation: fade-out 1s linear;
+}
+
+.induction-timetable-finder .induction-timetable-finder__results,
+.induction-timetable-finder-nest .induction-timetable-finder__results {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    clear: both;
+    zoom: 1;
+    float: left;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+}
+
+.induction-timetable-finder .induction-timetable-finder__results:before, .induction-timetable-finder .induction-timetable-finder__results:after,
+.induction-timetable-finder-nest .induction-timetable-finder__results:before,
+.induction-timetable-finder-nest .induction-timetable-finder__results:after {
+    content: "";
+    display: block;
+}
+
+.induction-timetable-finder .induction-timetable-finder__results:after,
+.induction-timetable-finder-nest .induction-timetable-finder__results:after {
+    clear: both;
+}
+
+@supports (display: flex) {
+    .induction-timetable-finder .induction-timetable-finder__results,
+    .induction-timetable-finder-nest .induction-timetable-finder__results {
+        float: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__results,
+    .induction-timetable-finder-nest .induction-timetable-finder__results {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}
+
+.induction-timetable-finder .induction-timetable-finder-result,
+.induction-timetable-finder-nest .induction-timetable-finder-result {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15);
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+    width: 100%;
+}
+
+@media (min-width: 651px) {
+    .induction-timetable-finder .induction-timetable-finder-result,
+    .induction-timetable-finder-nest .induction-timetable-finder-result {
+        width: calc(50% - 1rem);
+    }
+}
+
+@media (min-width: 901px) {
+    .induction-timetable-finder .induction-timetable-finder-result,
+    .induction-timetable-finder-nest .induction-timetable-finder-result {
+        width: calc(33% - 1rem);
+    }
+}
+
+@media (min-width: 1201px) {
+    .induction-timetable-finder .induction-timetable-finder-result,
+    .induction-timetable-finder-nest .induction-timetable-finder-result {
+        width: calc(25% - 1rem);
+    }
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a,
+.induction-timetable-finder-nest .induction-timetable-finder-result a {
+    background-color: inherit;
+    color: inherit;
+    border-bottom-width: 0;
+    border-radius: 0;
+    border: 0;
+    display: block;
+    margin: 0;
+    overflow: hidden;
+    padding: 1rem;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a:hover, .induction-timetable-finder .induction-timetable-finder-result a:focus, .induction-timetable-finder .induction-timetable-finder-result a:active,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active {
+    background-color: inherit;
+    color: inherit;
+    outline-width: 0;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a h2,
+.induction-timetable-finder .induction-timetable-finder-result a h3,
+.induction-timetable-finder-nest .induction-timetable-finder-result a h2,
+.induction-timetable-finder-nest .induction-timetable-finder-result a h3 {
+    display: inline-block;
+    font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 800;
+    width: auto;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a h3 span {
+    border-bottom: 2px solid #666666;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a .best-bet__description,
+.induction-timetable-finder .induction-timetable-finder-result a .best-bet__url,
+.induction-timetable-finder .induction-timetable-finder-result a .pocket-card__description,
+.induction-timetable-finder .induction-timetable-finder-result a .feature-events_card__description,
+.induction-timetable-finder .induction-timetable-finder-result a .search-result__description,
+.induction-timetable-finder .induction-timetable-finder-result a .search-result__url,
+.induction-timetable-finder .induction-timetable-finder-result a .service-finder-result__description,
+.induction-timetable-finder .induction-timetable-finder-result a h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a .best-bet__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a .best-bet__url,
+.induction-timetable-finder-nest .induction-timetable-finder-result a .pocket-card__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a .feature-events_card__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a .search-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a .search-result__url,
+.induction-timetable-finder-nest .induction-timetable-finder-result a .service-finder-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a h3 span {
+    color: #666666;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a,
+.induction-timetable-finder-nest .induction-timetable-finder-result a {
+    background-color: #ffffff;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a:hover, .induction-timetable-finder .induction-timetable-finder-result a:focus, .induction-timetable-finder .induction-timetable-finder-result a:active,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active {
+    background-color: #f2f2f2;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a:hover h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a:hover h3 span, .induction-timetable-finder .induction-timetable-finder-result a:focus h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a:focus h3 span, .induction-timetable-finder .induction-timetable-finder-result a:active h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a:active h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active h3 span {
+    border-bottom-color: #0c0c0e;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a:hover .best-bet__description,
+.induction-timetable-finder .induction-timetable-finder-result a:hover .best-bet__url,
+.induction-timetable-finder .induction-timetable-finder-result a:hover .pocket-card__description,
+.induction-timetable-finder .induction-timetable-finder-result a:hover .feature-events_card__description,
+.induction-timetable-finder .induction-timetable-finder-result a:hover .search-result__description,
+.induction-timetable-finder .induction-timetable-finder-result a:hover .search-result__url,
+.induction-timetable-finder .induction-timetable-finder-result a:hover .service-finder-result__description,
+.induction-timetable-finder .induction-timetable-finder-result a:hover h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a:hover h3 span, .induction-timetable-finder .induction-timetable-finder-result a:focus .best-bet__description,
+.induction-timetable-finder .induction-timetable-finder-result a:focus .best-bet__url,
+.induction-timetable-finder .induction-timetable-finder-result a:focus .pocket-card__description,
+.induction-timetable-finder .induction-timetable-finder-result a:focus .feature-events_card__description,
+.induction-timetable-finder .induction-timetable-finder-result a:focus .search-result__description,
+.induction-timetable-finder .induction-timetable-finder-result a:focus .search-result__url,
+.induction-timetable-finder .induction-timetable-finder-result a:focus .service-finder-result__description,
+.induction-timetable-finder .induction-timetable-finder-result a:focus h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a:focus h3 span, .induction-timetable-finder .induction-timetable-finder-result a:active .best-bet__description,
+.induction-timetable-finder .induction-timetable-finder-result a:active .best-bet__url,
+.induction-timetable-finder .induction-timetable-finder-result a:active .pocket-card__description,
+.induction-timetable-finder .induction-timetable-finder-result a:active .feature-events_card__description,
+.induction-timetable-finder .induction-timetable-finder-result a:active .search-result__description,
+.induction-timetable-finder .induction-timetable-finder-result a:active .search-result__url,
+.induction-timetable-finder .induction-timetable-finder-result a:active .service-finder-result__description,
+.induction-timetable-finder .induction-timetable-finder-result a:active h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a:active h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover .best-bet__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover .best-bet__url,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover .pocket-card__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover .feature-events_card__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover .search-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover .search-result__url,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover .service-finder-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:hover h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus .best-bet__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus .best-bet__url,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus .pocket-card__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus .feature-events_card__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus .search-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus .search-result__url,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus .service-finder-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active .best-bet__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active .best-bet__url,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active .pocket-card__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active .feature-events_card__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active .search-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active .search-result__url,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active .service-finder-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active h3 span {
+    color: #0c0c0e;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a:focus h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a:focus h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:focus h3 span {
+    outline: 2px dotted #0c0c0e;
+    outline-offset: 3px;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result a:active h2 span,
+.induction-timetable-finder .induction-timetable-finder-result a:active h3 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active h2 span,
+.induction-timetable-finder-nest .induction-timetable-finder-result a:active h3 span {
+    outline: 2px dotted #0c0c0e;
+    outline-offset: 0;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result:hover, .induction-timetable-finder .induction-timetable-finder-result:focus, .induction-timetable-finder .induction-timetable-finder-result:active,
+.induction-timetable-finder-nest .induction-timetable-finder-result:hover,
+.induction-timetable-finder-nest .induction-timetable-finder-result:focus,
+.induction-timetable-finder-nest .induction-timetable-finder-result:active {
+    -webkit-box-shadow: 0 0 1.5rem 3px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0 1.5rem 3px rgba(0, 0, 0, 0.15);
+}
+
+.induction-timetable-finder .induction-timetable-finder-result__icon,
+.induction-timetable-finder-nest .induction-timetable-finder-result__icon {
+    display: block;
+    width: 100%;
+    height: 3rem;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result__icon img,
+.induction-timetable-finder-nest .induction-timetable-finder-result__icon img {
+    height: 100%;
+    margin: 0 auto;
+}
+
+@media (max-width: 650px) {
+    .induction-timetable-finder .induction-timetable-finder-result__icon,
+    .induction-timetable-finder-nest .induction-timetable-finder-result__icon {
+        height: unset;
+    }
+    .induction-timetable-finder .induction-timetable-finder-result__icon img,
+    .induction-timetable-finder-nest .induction-timetable-finder-result__icon img {
+        height: 3rem;
+    }
+}
+
+.induction-timetable-finder .induction-timetable-finder-result__title,
+.induction-timetable-finder-nest .induction-timetable-finder-result__title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result .induction-timetable-finder-result__link,
+.induction-timetable-finder-nest .induction-timetable-finder-result .induction-timetable-finder-result__link {
+    height: 100%;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result .induction-timetable-finder-result__link .induction-timetable-finder-result__description,
+.induction-timetable-finder .induction-timetable-finder-result .induction-timetable-finder-result__link .induction-timetable-finder-result__title,
+.induction-timetable-finder-nest .induction-timetable-finder-result .induction-timetable-finder-result__link .induction-timetable-finder-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result .induction-timetable-finder-result__link .induction-timetable-finder-result__title {
+    text-align: center;
+    width: 100%;
+}
+
+.induction-timetable-finder .induction-timetable-finder-result .induction-timetable-finder-result__link .induction-timetable-finder-result__description,
+.induction-timetable-finder-nest .induction-timetable-finder-result .induction-timetable-finder-result__link .induction-timetable-finder-result__description {
+    font-size: 14px;
+}
+
+.induction-timetable-finder .induction-timetable-finder__results__list,
+.induction-timetable-finder-nest .induction-timetable-finder__results__list {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    clear: both;
+    zoom: 1;
+    max-width: 1440px;
+}
+
+.induction-timetable-finder .induction-timetable-finder__results__list:before, .induction-timetable-finder .induction-timetable-finder__results__list:after,
+.induction-timetable-finder-nest .induction-timetable-finder__results__list:before,
+.induction-timetable-finder-nest .induction-timetable-finder__results__list:after {
+    content: "";
+    display: block;
+}
+
+.induction-timetable-finder .induction-timetable-finder__results__list:after,
+.induction-timetable-finder-nest .induction-timetable-finder__results__list:after {
+    clear: both;
+}
+
+@media (max-width: 500px) {
+    .induction-timetable-finder .induction-timetable-finder__results__list,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__list {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+@media (min-width: 501px) {
+    .induction-timetable-finder .induction-timetable-finder__results__list,
+    .induction-timetable-finder-nest .induction-timetable-finder__results__list {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.induction-timetable-finder .induction-timetable-finder-result__url,
+.induction-timetable-finder-nest .induction-timetable-finder-result__url {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.induction-timetable-finder .induction-timetable-finder__top {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+@media (max-width: 900px) {
+    .induction-timetable-finder .induction-timetable-finder__main {
+        margin-left: 0.5rem;
+    }
 }
 
 .anchor-demo-list li {
