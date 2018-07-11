@@ -24614,6 +24614,12 @@ table tbody > tr > td:hover {
     }
 }
 
+.induction__event__location .induction__event__location__map {
+    height: 320px;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+
 .induction__event__back {
     margin-bottom: 1rem;
     margin-top: 1rem;
