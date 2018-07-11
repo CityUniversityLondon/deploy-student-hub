@@ -24566,10 +24566,6 @@ table tbody > tr > td:hover {
     }
 }
 
-.induction__event__attendance .induction__events__optional {
-    font-weight: 600;
-}
-
 .induction__event__attendance .induction__events__restriction {
     font-weight: 600;
     text-align: right;
@@ -24579,6 +24575,12 @@ table tbody > tr > td:hover {
     .induction__event__attendance .induction__events__restriction {
         text-align: left;
     }
+}
+
+.induction__events__optional {
+    font-family: "Lato", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
 }
 
 .induction__event__location {
