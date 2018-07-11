@@ -24398,6 +24398,10 @@ table tbody > tr > td:hover {
     }
 }
 
+.induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__portrait img {
+    border-radius: 50%;
+}
+
 .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__name {
     /** TODO: Is min height necessary? **/
     float: left;
@@ -24429,45 +24433,9 @@ table tbody > tr > td:hover {
     }
 }
 
-.induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
-    /** TODO: Is min height necessary? **/
-    float: left;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    position: relative;
-}
-
-@supports (display: flex) {
-    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
-        float: none;
-        -webkit-box-flex: 0;
-            -ms-flex: 0 1 auto;
-                flex: 0 1 auto;
-    }
-}
-
-@media (max-width: 900px) {
-    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
-        width: 100%;
-    }
-}
-
-@media (min-width: 901px) {
-    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
-        width: 83.333%;
-    }
-}
-
-@media (max-width: 900px) {
-    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
-        left: 0;
-    }
-}
-
-@media (min-width: 901px) {
-    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
-        left: 16.667%;
-    }
+.induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__name .induction__event__facilitator__jobtitle {
+    font-size: 1rem;
+    font-weight: 400;
 }
 
 .induction__event__attendance {
