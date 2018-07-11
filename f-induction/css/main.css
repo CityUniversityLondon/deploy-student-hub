@@ -24413,6 +24413,7 @@ table tbody > tr > td:hover {
 
 .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__portrait img {
     border-radius: 50%;
+    max-width: 16.667%;
 }
 
 .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__name {
