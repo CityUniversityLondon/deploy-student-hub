@@ -24332,6 +24332,143 @@ table tbody > tr > td:hover {
     }
 }
 
+.induction__events__facilitator-list .induction__event__facilitator {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    clear: both;
+    zoom: 1;
+    float: left;
+    width: calc(100% + 1rem);
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+}
+
+.induction__events__facilitator-list .induction__event__facilitator:before, .induction__events__facilitator-list .induction__event__facilitator:after {
+    content: "";
+    display: block;
+}
+
+.induction__events__facilitator-list .induction__event__facilitator:after {
+    clear: both;
+}
+
+@supports (display: flex) {
+    .induction__events__facilitator-list .induction__event__facilitator {
+        float: none;
+    }
+}
+
+.induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__portrait {
+    /** TODO: Is min height necessary? **/
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+}
+
+@supports (display: flex) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__portrait {
+        float: none;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__portrait {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__portrait {
+        width: 16.667%;
+    }
+}
+
+.induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__name {
+    /** TODO: Is min height necessary? **/
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@supports (display: flex) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__name {
+        float: none;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__name {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__name {
+        width: 83.333%;
+    }
+}
+
+.induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
+    /** TODO: Is min height necessary? **/
+    float: left;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: relative;
+}
+
+@supports (display: flex) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
+        float: none;
+        -webkit-box-flex: 0;
+            -ms-flex: 0 1 auto;
+                flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
+        width: 100%;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
+        width: 83.333%;
+    }
+}
+
+@media (max-width: 900px) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
+        left: 0;
+    }
+}
+
+@media (min-width: 901px) {
+    .induction__events__facilitator-list .induction__event__facilitator .induction__event__facilitator__jobtitle {
+        left: 16.667%;
+    }
+}
+
 .induction__event__attendance {
     width: 100%;
     margin-left: auto;
