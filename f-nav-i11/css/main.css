@@ -15636,6 +15636,7 @@ input[type='checkbox']:checked + .header-toggle .header-toggle__content {
     margin: 0;
     padding: 0.5rem 1rem;
     font-weight: 600;
+    color: #ffffff;
 }
 
 @media (max-width: 900px) {
