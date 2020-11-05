@@ -23568,13 +23568,17 @@ table tbody > tr > td:hover {
     position: relative;
 }
 
+.lab-stats {
+    width: 100%;
+}
+
 @media (max-width: 500px) {
     .lab-stats td:nth-child(4),
     .lab-stats th:nth-child(4) {
         display: none;
     }
     .lab-stats .pc-available {
-        background-color: #427844;
+        background-color: #86c5b3;
     }
     .lab-stats .pc-unavailable {
         background-color: #d82231;
@@ -23594,7 +23598,7 @@ table tbody > tr > td:hover {
     content: '';
     height: 100%;
     width: var(--free-pc-percentage);
-    background-color: #427844;
+    background-color: #86c5b3;
 }
 
 .anchor-demo-list li {
