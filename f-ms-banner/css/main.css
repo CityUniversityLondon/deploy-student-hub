@@ -10192,6 +10192,18 @@ svg:not(:root) {
     height: 100%;
 }
 
+@media (min-width: 1201px) {
+    .banner__img.banner--cutout--none {
+        max-height: 480px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .banner__img:not(.banner--cutout--none) {
+        max-height: 520px;
+    }
+}
+
 .banner__img > picture {
     position: absolute;
     min-width: 100%;
