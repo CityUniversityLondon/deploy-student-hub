@@ -10040,6 +10040,31 @@ svg:not(:root) {
     }
 }
 
+.banner--image {
+    margin-bottom: -1px;
+}
+
+@media (max-width: 650px) {
+    .banner--image:not(.banner--with-ctas):not(.banner--image--with-promo):not(.banner--image--with-freehtml) .banner__content__text {
+        margin-bottom: 0;
+    }
+    .banner--image .banner__image__group picture {
+        position: relative;
+    }
+    .banner--image .banner__container {
+        padding: 0;
+    }
+    .banner--image .banner__container .banner__content {
+        padding: 0;
+    }
+    .banner--image .banner__container .banner__content .banner__content__text {
+        padding: 0;
+    }
+    .banner--image .banner__container .banner__content .banner__content__text .banner__content__text__item {
+        background-color: #0c0c0e;
+    }
+}
+
 .banner--image .banner__container,
 .banner--image .banner__content {
     height: 100%;
