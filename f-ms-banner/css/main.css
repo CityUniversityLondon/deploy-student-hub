@@ -10273,7 +10273,7 @@ svg:not(:root) {
 }
 
 @media (min-width: 651px) {
-    .banner__over-image {
+    .banner__over-image:not(.banner__over-image--no-img-bg) {
         position: absolute;
         top: 0;
         width: 100%;
