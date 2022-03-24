@@ -10051,17 +10051,23 @@ svg:not(:root) {
     .banner--image .banner__image__group picture {
         position: relative;
     }
-    .banner--image .banner__container {
+    .banner--image .banner__image__group .banner__container {
         padding: 0;
     }
-    .banner--image .banner__container .banner__content {
+    .banner--image .banner__image__group .banner__container .banner__content {
         padding: 0;
     }
-    .banner--image .banner__container .banner__content .banner__content__text {
+    .banner--image .banner__image__group .banner__container .banner__content .banner__content__text {
         padding: 0;
     }
-    .banner--image .banner__container .banner__content .banner__content__text .banner__content__text__item {
+    .banner--image .banner__image__group .banner__container .banner__content .banner__content__text .banner__content__text__item {
         background-color: #0c0c0e;
+    }
+}
+
+@media (max-width: 650px) and (max-width: 650px) {
+    .banner--image .banner__image__group .banner__over-image--no-img-bg {
+        padding: 1rem calc(2rem - 0.5rem) 0 1rem;
     }
 }
 
@@ -10217,21 +10223,19 @@ svg:not(:root) {
     height: 100%;
 }
 
-@media (min-width: 1201px) {
-    .banner__img.banner--cutout--none {
-        max-height: 480px;
-    }
-}
-
-@media (min-width: 1201px) {
-    .banner__img:not(.banner--cutout--none) {
+@media (min-width: 651px) {
+    .banner__img {
         max-height: 520px;
     }
 }
 
 .banner__img > picture {
-    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
     min-width: 100%;
+    max-width: none;
+    min-height: 100%;
 }
 
 .banner__img > picture > img {
@@ -10266,6 +10270,14 @@ svg:not(:root) {
     max-width: none;
     min-height: 100%;
     width: calc(100% + 1rem);
+}
+
+@media (min-width: 651px) {
+    .banner__over-image {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
 }
 
 .banner__over-image--no-img-bg .banner__content__text {
