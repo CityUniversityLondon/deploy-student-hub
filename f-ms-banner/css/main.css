@@ -10040,10 +10040,6 @@ svg:not(:root) {
     }
 }
 
-.banner--image {
-    margin-bottom: -1px;
-}
-
 @media (max-width: 650px) {
     .banner--image:not(.banner--with-ctas):not(.banner--image--with-promo):not(.banner--image--with-freehtml) .banner__content__text {
         margin-bottom: 0;
@@ -10057,17 +10053,18 @@ svg:not(:root) {
     .banner--image .banner__image__group .banner__container .banner__content {
         padding: 0;
     }
-    .banner--image .banner__image__group .banner__container .banner__content .banner__content__text {
-        padding: 0;
-    }
     .banner--image .banner__image__group .banner__container .banner__content .banner__content__text .banner__content__text__item {
+        display: inline-block;
         background-color: #0c0c0e;
     }
-}
-
-@media (max-width: 650px) and (max-width: 650px) {
     .banner--image .banner__image__group .banner__over-image--no-img-bg {
         padding: 1rem calc(2rem - 0.5rem) 0 1rem;
+    }
+    .banner--image .banner__image__group .banner__over-image--no-img-bg .banner__container .banner__content__text {
+        padding: 0;
+    }
+    .banner--image .banner__image__group .banner__over-image--no-img-bg .banner__container .banner__content__text .banner__content__text__item {
+        margin-bottom: 0.5rem;
     }
 }
 
@@ -10080,14 +10077,8 @@ svg:not(:root) {
     margin-bottom: 6rem;
 }
 
-.banner--image:not(.banner--with-ctas):not(.banner--image--with-promo):not(.banner--image--with-freehtml) .banner__content__text {
-    margin-bottom: 10%;
-}
-
-@media (max-width: 500px) {
-    .banner--image:not(.banner--with-ctas):not(.banner--image--with-promo):not(.banner--image--with-freehtml) .banner__content__text {
-        margin-bottom: 0;
-    }
+.banner--image:not(.banner--with-ctas):not(.banner--image--with-promo):not(.banner--image--with-freehtml) .banner__img:not(.banner__img__new) + .banner__content__text {
+    margin-bottom: 10rem;
 }
 
 .banner--image .banner__content__text__standfirst {
@@ -10187,6 +10178,9 @@ svg:not(:root) {
 }
 
 @media (min-width: 901px) {
+    .banner--image.banner--cutout--left, .banner--image.banner--cutout--right {
+        margin-bottom: -1px;
+    }
     .banner--image.banner--cutout--left .banner__content, .banner--image.banner--cutout--right .banner__content {
         margin-bottom: 4rem;
     }
@@ -10224,12 +10218,43 @@ svg:not(:root) {
 }
 
 @media (min-width: 651px) {
-    .banner__img {
+    .banner__img.banner__img__new {
         max-height: 520px;
     }
 }
 
+@media (min-width: 651px) {
+    .banner__img.banner__img__new .banner__over-image:not(.banner__over-image--no-img-bg) {
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+.banner__img.banner__img__new .banner__over-image:not(.banner__over-image--no-img-bg) .banner__content__text {
+    padding: 0;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .banner__img.banner__img__new + .banner__over-image:not(.banner__over-image--no-img-bg) .banner__container .banner__content .banner__content__text {
+        margin-bottom: 10%;
+    }
+}
+
+@media (max-width: 650px) {
+    .banner__img.banner__img__new + .banner__over-image:not(.banner__over-image--no-img-bg) .banner__container .banner__content .banner__content__text {
+        padding: 0;
+        margin: 0;
+    }
+    .banner__img.banner__img__new + .banner__over-image:not(.banner__over-image--no-img-bg) .banner__container .banner__content .banner__content__text .banner__content__text__item {
+        display: block;
+    }
+}
+
+.banner__img > img,
 .banner__img > picture {
+    position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
@@ -10238,6 +10263,7 @@ svg:not(:root) {
     min-height: 100%;
 }
 
+.banner__img > img > img,
 .banner__img > picture > img {
     min-width: 100%;
 }
@@ -10272,16 +10298,8 @@ svg:not(:root) {
     width: calc(100% + 1rem);
 }
 
-@media (min-width: 651px) {
-    .banner__over-image:not(.banner__over-image--no-img-bg) {
-        position: absolute;
-        top: 0;
-        width: 100%;
-    }
-}
-
 .banner__over-image--no-img-bg .banner__content__text {
-    margin-bottom: 1rem !important;
+    margin-bottom: 1rem;
 }
 
 .banner--cutout--none {
@@ -15391,14 +15409,12 @@ input[type='checkbox']:checked + .header-toggle .header-toggle__content {
     box-shadow: 0 8px 16px 0 rgba(12, 12, 14, 0.2);
     align-self: flex-start;
     font-size: 14px;
-    height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
     margin-bottom: 1rem;
     margin-top: 0.5rem;
     max-height: 100vh;
     width: 100%;
-    position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 3;
