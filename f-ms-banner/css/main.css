@@ -10059,6 +10059,7 @@ svg:not(:root) {
     }
     .banner--image .banner__image__group .banner__over-image--no-img-bg .banner__container .banner__content__text {
         padding: 0;
+        margin-bottom: 0;
     }
     .banner--image .banner__image__group .banner__over-image--no-img-bg .banner__container .banner__content__text .banner__content__text__item {
         margin-bottom: 0.5rem;
@@ -10074,8 +10075,8 @@ svg:not(:root) {
     margin-bottom: 6rem;
 }
 
-.banner--image:not(.banner--with-ctas):not(.banner--image--with-promo):not(.banner--image--with-freehtml) .banner__img:not(.banner__img__new) + .banner__content__text {
-    margin-bottom: 10rem;
+.banner--image .banner__over-image--no-img-bg .banner__content__text {
+    margin-bottom: 1rem;
 }
 
 .banner--image .banner__content__text__standfirst {
@@ -10233,7 +10234,7 @@ svg:not(:root) {
     margin: 0;
 }
 
-.banner__img:not(.banner__img__new) + .banner__over-image .banner__content__text {
+.banner__img:not(.banner__img__new) + .banner__over-image:not(.banner__over-image--no-img-bg) .banner__content__text {
     margin-bottom: 10rem;
 }
 
@@ -10297,10 +10298,6 @@ svg:not(:root) {
     max-width: none;
     min-height: 100%;
     width: calc(100% + 1rem);
-}
-
-.banner__over-image--no-img-bg .banner__content__text {
-    margin-bottom: 1rem;
 }
 
 .banner--cutout--none {
