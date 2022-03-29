@@ -10041,9 +10041,6 @@ svg:not(:root) {
 }
 
 @media (max-width: 650px) {
-    .banner--image:not(.banner--with-ctas):not(.banner--image--with-promo):not(.banner--image--with-freehtml) .banner__content__text {
-        margin-bottom: 0;
-    }
     .banner--image .banner__image__group picture {
         position: relative;
     }
@@ -10234,6 +10231,10 @@ svg:not(:root) {
 .banner__img.banner__img__new .banner__over-image:not(.banner__over-image--no-img-bg) .banner__content__text {
     padding: 0;
     margin: 0;
+}
+
+.banner__img:not(.banner__img__new) + .banner__over-image .banner__content__text {
+    margin-bottom: 10rem;
 }
 
 @media (max-width: 900px) {
