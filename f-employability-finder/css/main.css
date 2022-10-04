@@ -23658,6 +23658,22 @@ table tbody > tr > td:hover {
     padding: initial;
 }
 
+@media (min-width: 651px) {
+    .employability-finder__form .filter-box__inner h2 {
+        display: inline;
+    }
+}
+
+.employability-finder__form .filter-box__inner .fa-sliders {
+    font-size: 1.44rem;
+}
+
+@media (max-width: 650px) {
+    .employability-finder__form .filter-box__inner .fa-sliders {
+        display: none;
+    }
+}
+
 .js .employability-finder .query-box {
     position: absolute;
     width: 1px;
@@ -23707,11 +23723,11 @@ table tbody > tr > td:hover {
 }
 
 .employability-finder__results__item__heading {
-    padding: 2rem 1rem;
+    padding: 1rem;
     background-color: #d92231;
 }
 
-.employability-finder__results__item__heading h2 {
+.employability-finder__results__item__heading h3 {
     color: #ffffff;
     font-size: 1.44rem;
     font-weight: 500;
