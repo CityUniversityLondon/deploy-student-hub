@@ -23738,12 +23738,24 @@ table tbody > tr > td:hover {
     padding: 1rem;
 }
 
+.employability-finder__results__item__info__code {
+    padding: 1rem 1rem 0 1rem;
+    font-weight: bold;
+    margin-bottom: initial;
+}
+
 .filter-box__reset {
     padding: 0.5rem 1rem;
     background-color: #d92231;
     color: #ffffff;
     font-weight: 500;
     font-size: 1.2rem;
+}
+
+.employability__hr {
+    border-bottom: 1px solid #0c0c0e;
+    width: 100%;
+    margin-top: 2rem;
 }
 
 .anchor-demo-list li {
