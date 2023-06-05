@@ -10220,11 +10220,6 @@ svg:not(:root) {
     }
 }
 
-.banner__img.banner__img__new .banner__over-image {
-    position: relative;
-    top: -1px;
-}
-
 @media (min-width: 651px) {
     .banner__img.banner__img__new .banner__over-image:not(.banner__over-image--no-img-bg) {
         position: absolute;
@@ -10306,6 +10301,13 @@ svg:not(:root) {
 
 .banner--cutout--none {
     margin-bottom: 2rem;
+}
+
+@media (max-width: 500px) {
+    .banner__over-image {
+        position: relative;
+        top: -1px;
+    }
 }
 
 .banner__content__video__grid {
