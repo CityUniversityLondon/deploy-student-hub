@@ -10211,13 +10211,18 @@ svg:not(:root) {
 }
 
 .banner__img {
-    height: 99%;
+    height: 100%;
 }
 
 @media (min-width: 651px) {
     .banner__img.banner__img__new {
         max-height: 520px;
     }
+}
+
+.banner__img.banner__img__new .banner__over-image {
+    position: relative;
+    top: -1px;
 }
 
 @media (min-width: 651px) {
