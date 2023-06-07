@@ -5894,10 +5894,6 @@ svg:not(:root) {
     }
 }
 
-.left-hand-navigation-grid__body .container, .left-hand-navigation-grid__body .banner__container, .left-hand-navigation-grid__body .banner__standfirst, .left-hand-navigation-grid__body .banner__freehtml > div {
-    border: thick solid pink;
-}
-
 .fallout {
     width: 100%;
     margin-left: auto;
