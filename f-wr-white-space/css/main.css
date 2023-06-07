@@ -5894,6 +5894,10 @@ svg:not(:root) {
     }
 }
 
+.left-hand-navigation-grid__body .container, .left-hand-navigation-grid__body .banner__container, .left-hand-navigation-grid__body .banner__standfirst, .left-hand-navigation-grid__body .banner__freehtml > div {
+    border: thick solid pink;
+}
+
 .fallout {
     width: 100%;
     margin-left: auto;
@@ -15608,6 +15612,7 @@ input[type='checkbox']:checked + .header-toggle .header-toggle__content {
     position: relative;
     margin-left: 0;
     margin-right: 0;
+    display: initial;
 }
 
 .left-hand-navigation-grid__body:before, .left-hand-navigation-grid__body:after {
