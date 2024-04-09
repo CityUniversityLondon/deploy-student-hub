@@ -5696,6 +5696,7 @@ svg:not(:root) {
 .header__logo img {
     background-color: #ffffff;
     margin-left: 0.5rem;
+    margin-right: 0.5rem;
     padding: 36px 24px;
     width: 110px;
     height: 161.05417px;
@@ -5710,11 +5711,62 @@ svg:not(:root) {
 .header__logo .header__logo__parent {
     border: 0;
     background: none;
+    background-color: inherit;
+    color: inherit;
+    border-bottom-width: 0;
+    background-color: inherit;
+    color: inherit;
+    border-bottom-width: 0;
+    color: #ffffff;
+    display: inline-block;
+    overflow-x: hidden;
 }
 
 .header__logo .header__logo__parent:hover {
     border: 0;
     background: none;
+}
+
+.header__logo .header__logo__parent:hover, .header__logo .header__logo__parent:focus, .header__logo .header__logo__parent:active {
+    background-color: inherit;
+    color: inherit;
+    outline-width: 0;
+}
+
+.header__logo .header__logo__parent:hover, .header__logo .header__logo__parent:focus, .header__logo .header__logo__parent:active {
+    background-color: inherit;
+    color: inherit;
+    outline-width: 0;
+}
+
+.header__logo .header__logo__parent:hover, .header__logo .header__logo__parent:focus, .header__logo .header__logo__parent:active {
+    color: #d8d8d8;
+}
+
+.header__logo .header__logo__parent:after {
+    transition: opacity 0.2s ease 0s, transform 0.2s ease 0s;
+    content: '';
+    opacity: 0;
+    background-color: #ffffff;
+    width: 100%;
+    height: 2px;
+    display: block;
+    transform: translateX(-100%);
+}
+
+.header__logo .header__logo__parent:hover:after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.header__logo .header__logo__parent:focus {
+    outline: 2px dotted #ffffff;
+    outline-offset: 3px;
+}
+
+.header__logo .header__logo__parent:active {
+    outline: 2px dotted #ffffff;
+    outline-offset: 0;
 }
 
 .header__logo .header__logo__home {
@@ -7441,6 +7493,7 @@ svg:not(:root) {
     min-width: 17.5rem;
     width: 50%;
     z-index: 3;
+    visibility: hidden;
 }
 
 @media (min-width: 901px) {
@@ -7467,6 +7520,7 @@ svg:not(:root) {
 
 .nav-mobile__toggle:checked + .nav-mobile__overlay .nav-mobile__content {
     animation: nav-mobile-in 0.2s ease 0s both normal;
+    visibility: visible;
 }
 
 @keyframes nav-mobile-in {
