@@ -20083,13 +20083,101 @@ function openModalDialog(title, content) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var core_js_modules_es6_string_iterator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es6.string.iterator */ "./node_modules/core-js/modules/es6.string.iterator.js");
+/* harmony import */ var core_js_modules_es6_string_iterator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_string_iterator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es6_array_from__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es6.array.from */ "./node_modules/core-js/modules/es6.array.from.js");
+/* harmony import */ var core_js_modules_es6_array_from__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_from__WEBPACK_IMPORTED_MODULE_1__);
 
+
+
+
+
+function toggleMenu(el, button) {
+  var container = el.closest('.dd-menu__container'); // Close all other dropdowns in the container
+
+  container.querySelectorAll('.dd-menu--open').forEach(function (item) {
+    if (item !== el) {
+      closeMenu(item);
+    }
+  }); // Toggle the clicked menu
+
+  var isOpen = el.classList.toggle('dd-menu--open');
+  button.setAttribute('aria-expanded', isOpen); // Find and update the screen reader text
+
+  var srText = button.querySelector('.dd-menu__toggle-state');
+
+  if (srText) {
+    srText.textContent = isOpen ? 'Close ' : 'Open ';
+  }
+}
+
+function closeMenu(el) {
+  if (!el) return; // Prevent errors if el is null
+
+  var button = el.querySelector('.dd-menu__toggle');
+  if (!button) return;
+  el.classList.remove('dd-menu--open');
+  button.setAttribute('aria-expanded', 'false');
+}
+
+function handleOutsideInteraction(event, el) {
+  if (!el.contains(event.target)) {
+    closeMenu(el);
+  }
+}
+
+function handleKeyboardNavigation(event, button, submenu) {
+  if (event.key === 'Enter' || event.key === ' ') {
+    event.preventDefault();
+    button.click();
+  } else if (event.key === 'ArrowDown') {
+    event.preventDefault();
+    var firstLink = submenu.querySelector('a');
+    if (firstLink) firstLink.focus();
+  } else if (event.key === 'Escape') {
+    // FIX: Allow Escape to close menu when focus is still on the parent button
+    closeMenu(button.closest('.dd-menu'));
+    button.focus();
+  }
+}
+
+function handleSubmenuNavigation(event, submenu, button) {
+  var focusableItems = Array.from(submenu.querySelectorAll('a'));
+  var currentIndex = focusableItems.indexOf(document.activeElement);
+
+  if (event.key === 'ArrowDown') {
+    event.preventDefault();
+    focusableItems[(currentIndex + 1) % focusableItems.length].focus();
+  } else if (event.key === 'ArrowUp') {
+    event.preventDefault();
+    focusableItems[(currentIndex - 1 + focusableItems.length) % focusableItems.length].focus();
+  } else if (event.key === 'Escape') {
+    // FIX: Close menu even if focus is on any submenu item
+    closeMenu(submenu.closest('.dd-menu'));
+    button.focus();
+  }
+}
 
 function launch(el) {
   console.log('launch dropdown menu');
-  el.addEventListener('click', function () {
-    console.log('dd top level clicked');
-    this.classList.toggle('dd-menu--open');
+  var button = el.querySelector('.dd-menu__toggle');
+  var submenu = el.querySelector('.dd-menu__sub');
+  if (!button || !submenu) return;
+  button.addEventListener('click', function (event) {
+    toggleMenu(el, button);
+    event.stopPropagation();
+  });
+  document.addEventListener('click', function (event) {
+    return handleOutsideInteraction(event, el);
+  });
+  document.addEventListener('focusin', function (event) {
+    return handleOutsideInteraction(event, el);
+  });
+  button.addEventListener('keydown', function (event) {
+    return handleKeyboardNavigation(event, button, submenu);
+  });
+  submenu.addEventListener('keydown', function (event) {
+    return handleSubmenuNavigation(event, submenu, button);
   });
 }
 
