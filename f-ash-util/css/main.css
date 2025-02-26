@@ -7653,7 +7653,6 @@ span.vertical-menu__page-link {
 @media (max-width: 900px) {
     .nav-mobile__toggle:checked + .nav-mobile__overlay .nav-mobile__toggle-label {
         padding: 0.5rem;
-        right: 0.3rem;
     }
 }
 
