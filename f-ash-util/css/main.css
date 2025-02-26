@@ -7390,8 +7390,8 @@ span.vertical-menu__page-link {
     font-size: 1.44rem;
 }
 
-.new-nav2 .vertical-menu--l1:nth-child(3),
-.new-nav2 .vertical-menu--l1:nth-child(4) {
+.new-nav .vertical-menu--l1:nth-child(3),
+.new-nav .vertical-menu--l1:nth-child(4) {
     border-bottom: 4px solid #555555;
 }
 
@@ -7570,7 +7570,8 @@ span.vertical-menu__page-link {
     align-self: flex-end;
     cursor: pointer;
     display: inline-block;
-    padding: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     border-width: 0;
     vertical-align: top;
     line-height: 1.44rem;
