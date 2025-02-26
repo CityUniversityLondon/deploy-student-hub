@@ -7382,6 +7382,19 @@ span.vertical-menu__page-link {
     padding-top: 0.75rem;
 }
 
+.vertical-menu__header a {
+    display: flex;
+}
+
+.vertical-menu__header a .fa, .vertical-menu__header a .url-slide--right .url-slide__icon, .url-slide--right .vertical-menu__header a .url-slide__icon, .vertical-menu__header a .media-block .video-preview__button:before, .media-block .vertical-menu__header a .video-preview__button:before, .vertical-menu__header a .accordion__content__heading-anchor__icon, .vertical-menu__header a .accordion.accordion--simple .accordion__content__heading-anchor .accordion__content__heading-anchor__icon, .accordion.accordion--simple .accordion__content__heading-anchor .vertical-menu__header a .accordion__content__heading-anchor__icon, .vertical-menu__header a .js .tabs__content__heading-anchor__icon, .js .vertical-menu__header a .tabs__content__heading-anchor__icon, .vertical-menu__header a .js .accordion-tabs__content__heading-anchor__icon, .js .vertical-menu__header a .accordion-tabs__content__heading-anchor__icon, .vertical-menu__header a .header-toggle--menu .header-toggle__icon, .header-toggle--menu .vertical-menu__header a .header-toggle__icon, .vertical-menu__header a .header-toggle--search .header-toggle__icon, .header-toggle--search .vertical-menu__header a .header-toggle__icon, .vertical-menu__header a .popup-def-list-group__prevnext__prev .popup-def-list-group__prevnext__prev__icon, .popup-def-list-group__prevnext__prev .vertical-menu__header a .popup-def-list-group__prevnext__prev__icon, .vertical-menu__header a .popup-def-list-group__prevnext__next .popup-def-list-group__prevnext__next__icon, .popup-def-list-group__prevnext__next .vertical-menu__header a .popup-def-list-group__prevnext__next__icon, .vertical-menu__header a .dialog__box__heading__close__icon, .vertical-menu__header a .video-banner__play span, .video-banner__play .vertical-menu__header a span {
+    font-size: 1.44rem;
+}
+
+.new-nav2 .vertical-menu--l1:nth-child(3),
+.new-nav2 .vertical-menu--l1:nth-child(4) {
+    border-bottom: 4px solid #555555;
+}
+
 .nav-mobile {
     /** TODO: Is min height necessary? **/
     float: left;
@@ -7557,15 +7570,13 @@ span.vertical-menu__page-link {
     align-self: flex-end;
     cursor: pointer;
     display: inline-block;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem;
     border-width: 0;
     vertical-align: top;
     line-height: 1.44rem;
     font-size: 1.44rem;
     font-weight: 600;
     text-align: center;
-    text-transform: uppercase;
     white-space: nowrap;
 }
 
@@ -7630,11 +7641,19 @@ span.vertical-menu__page-link {
 }
 
 .nav-mobile__toggle:checked + .nav-mobile__overlay .nav-mobile__toggle-label {
-    padding: 0.5rem;
     position: fixed;
-    top: 0;
-    right: 1rem;
+    top: 0.3rem;
+    right: 1.3rem;
     z-index: 4;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+    .nav-mobile__toggle:checked + .nav-mobile__overlay .nav-mobile__toggle-label {
+        padding: 0.5rem;
+        right: 0.3rem;
+    }
 }
 
 @media (max-width: 320px) {
