@@ -852,11 +852,11 @@ input[type='checkbox']:checked + .header-toggle .header-toggle__icon:before,
     content: "";
 }
 
-.fa-plus:before, .vertical-menu__toggle-link span:before, .accordion__content__heading-anchor.inactive .accordion__content__heading-anchor__icon:before, .accordion.accordion--simple .accordion__content__heading-anchor.inactive .accordion__content__heading-anchor__icon:before, .js .tabs__content__heading-anchor__icon:before, .js .accordion-tabs__content__heading-anchor__icon:before {
+.fa-plus:before, .accordion__content__heading-anchor.inactive .accordion__content__heading-anchor__icon:before, .accordion.accordion--simple .accordion__content__heading-anchor.inactive .accordion__content__heading-anchor__icon:before, .js .tabs__content__heading-anchor__icon:before, .js .accordion-tabs__content__heading-anchor__icon:before {
     content: "";
 }
 
-.fa-minus:before, .vertical-menu.open > .vertical-menu__header .vertical-menu__toggle-link span:before, .accordion__content__heading-anchor.active .accordion__content__heading-anchor__icon:before, .js [aria-selected='true'] .tabs__content__heading-anchor__icon:before, .js [aria-selected='true'] .accordion-tabs__content__heading-anchor__icon:before {
+.fa-minus:before, .accordion__content__heading-anchor.active .accordion__content__heading-anchor__icon:before, .js [aria-selected='true'] .tabs__content__heading-anchor__icon:before, .js [aria-selected='true'] .accordion-tabs__content__heading-anchor__icon:before {
     content: "";
 }
 
@@ -913,11 +913,11 @@ input[type='checkbox']:checked + .header-toggle .header-toggle__icon:before,
     content: "";
 }
 
-.fa-chevron-up:before {
+.fa-chevron-up:before, .vertical-menu.open > .vertical-menu__header .vertical-menu__toggle-link span:before {
     content: "";
 }
 
-.fa-chevron-down:before {
+.fa-chevron-down:before, .vertical-menu__toggle-link span:before {
     content: "";
 }
 
@@ -7235,8 +7235,8 @@ svg:not(:root) {
     outline-offset: 0;
 }
 
-.vertical-menu__page-link,
-.vertical-menu__toggle-link {
+a.vertical-menu__page-link,
+a.vertical-menu__toggle-link {
     background-color: inherit;
     color: inherit;
     border-bottom-width: 0;
@@ -7247,52 +7247,56 @@ svg:not(:root) {
     line-height: 1.5;
 }
 
-.vertical-menu__page-link:hover, .vertical-menu__page-link:focus, .vertical-menu__page-link:active,
-.vertical-menu__toggle-link:hover,
-.vertical-menu__toggle-link:focus,
-.vertical-menu__toggle-link:active {
+a.vertical-menu__page-link:hover, a.vertical-menu__page-link:focus, a.vertical-menu__page-link:active,
+a.vertical-menu__toggle-link:hover,
+a.vertical-menu__toggle-link:focus,
+a.vertical-menu__toggle-link:active {
     background-color: inherit;
     color: inherit;
     outline-width: 0;
 }
 
 @media (min-height: 901px) {
-    .vertical-menu__page-link,
-    .vertical-menu__toggle-link {
+    a.vertical-menu__page-link,
+    a.vertical-menu__toggle-link {
         padding: 0.75rem 1rem;
     }
 }
 
 @media (max-height: 900px) {
-    .vertical-menu__page-link,
-    .vertical-menu__toggle-link {
+    a.vertical-menu__page-link,
+    a.vertical-menu__toggle-link {
         padding: 0.5rem 1rem;
     }
 }
 
-.vertical-menu__page-link .vertical-menu__page-link__label,
-.vertical-menu__toggle-link .vertical-menu__page-link__label {
+a.vertical-menu__page-link .vertical-menu__page-link__label,
+a.vertical-menu__toggle-link .vertical-menu__page-link__label {
     transition: all 0.2s ease;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 
-.vertical-menu__page-link:hover .vertical-menu__page-link__label, .vertical-menu__page-link:focus .vertical-menu__page-link__label, .vertical-menu__page-link:active .vertical-menu__page-link__label,
-.vertical-menu__toggle-link:hover .vertical-menu__page-link__label,
-.vertical-menu__toggle-link:focus .vertical-menu__page-link__label,
-.vertical-menu__toggle-link:active .vertical-menu__page-link__label {
+a.vertical-menu__page-link:hover .vertical-menu__page-link__label, a.vertical-menu__page-link:focus .vertical-menu__page-link__label, a.vertical-menu__page-link:active .vertical-menu__page-link__label,
+a.vertical-menu__toggle-link:hover .vertical-menu__page-link__label,
+a.vertical-menu__toggle-link:focus .vertical-menu__page-link__label,
+a.vertical-menu__toggle-link:active .vertical-menu__page-link__label {
     border-bottom-color: #ffffff;
 }
 
-.vertical-menu__page-link:focus,
-.vertical-menu__toggle-link:focus {
+a.vertical-menu__page-link:focus,
+a.vertical-menu__toggle-link:focus {
     outline: 2px dotted #ffffff;
     outline-offset: 3px;
 }
 
-.vertical-menu__page-link:active,
-.vertical-menu__toggle-link:active {
+a.vertical-menu__page-link:active,
+a.vertical-menu__toggle-link:active {
     outline: 2px dotted #ffffff;
     outline-offset: 0;
+}
+
+span.vertical-menu__page-link {
+    display: block;
 }
 
 .vertical-menu__page-link {
@@ -7317,6 +7321,10 @@ svg:not(:root) {
     right: 0;
     font-size: 14px;
     height: 100%;
+}
+
+.vertical-menu__icon {
+    margin-right: 1rem;
 }
 
 .vertical-menu--l0 > .vertical-menu__header {
@@ -7410,6 +7418,19 @@ svg:not(:root) {
 
 .nav-mobile .vertical-menu--l1 > .vertical-menu__header span {
     padding-top: 0.75rem;
+}
+
+.vertical-menu__header a {
+    display: flex;
+}
+
+.vertical-menu__header a .fa, .vertical-menu__header a .url-slide--right .url-slide__icon, .url-slide--right .vertical-menu__header a .url-slide__icon, .vertical-menu__header a .media-block .video-preview__button:before, .media-block .vertical-menu__header a .video-preview__button:before, .vertical-menu__header a .accordion__content__heading-anchor__icon, .vertical-menu__header a .accordion.accordion--simple .accordion__content__heading-anchor .accordion__content__heading-anchor__icon, .accordion.accordion--simple .accordion__content__heading-anchor .vertical-menu__header a .accordion__content__heading-anchor__icon, .vertical-menu__header a .js .tabs__content__heading-anchor__icon, .js .vertical-menu__header a .tabs__content__heading-anchor__icon, .vertical-menu__header a .js .accordion-tabs__content__heading-anchor__icon, .js .vertical-menu__header a .accordion-tabs__content__heading-anchor__icon, .vertical-menu__header a .header-toggle--menu .header-toggle__icon, .header-toggle--menu .vertical-menu__header a .header-toggle__icon, .vertical-menu__header a .header-toggle--search .header-toggle__icon, .header-toggle--search .vertical-menu__header a .header-toggle__icon, .vertical-menu__header a .popup-def-list-group__prevnext__prev .popup-def-list-group__prevnext__prev__icon, .popup-def-list-group__prevnext__prev .vertical-menu__header a .popup-def-list-group__prevnext__prev__icon, .vertical-menu__header a .popup-def-list-group__prevnext__next .popup-def-list-group__prevnext__next__icon, .popup-def-list-group__prevnext__next .vertical-menu__header a .popup-def-list-group__prevnext__next__icon, .vertical-menu__header a .dialog__box__heading__close__icon, .vertical-menu__header a .video-banner__play span, .video-banner__play .vertical-menu__header a span {
+    font-size: 1.44rem;
+}
+
+.new-nav .vertical-menu--l1:nth-child(3),
+.new-nav .vertical-menu--l1:nth-child(4) {
+    border-bottom: 4px solid #555555;
 }
 
 .header:not(.header-v25) .nav-mobile {
@@ -7595,7 +7616,6 @@ svg:not(:root) {
     font-size: 1.44rem;
     font-weight: 600;
     text-align: center;
-    text-transform: uppercase;
     white-space: nowrap;
 }
 
@@ -7660,11 +7680,18 @@ svg:not(:root) {
 }
 
 .nav-mobile__toggle:checked + .nav-mobile__overlay .nav-mobile__toggle-label {
-    padding: 0.5rem;
     position: fixed;
-    top: 0;
-    right: 1rem;
+    top: 0.3rem;
+    right: 1.3rem;
     z-index: 4;
+    padding: 0.5rem 2rem;
+    font-size: 1.2rem;
+}
+
+@media (max-width: 900px) {
+    .nav-mobile__toggle:checked + .nav-mobile__overlay .nav-mobile__toggle-label {
+        padding: 0.5rem;
+    }
 }
 
 @media (max-width: 320px) {

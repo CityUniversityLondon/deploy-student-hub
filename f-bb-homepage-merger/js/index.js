@@ -20684,29 +20684,59 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var PARSE_REGEX = /^\s*([0-9]) ([^\s]+) [0-9] (.+)$/;
+// Regular expression to parse navigation data format
+var PARSE_REGEX = /^\s*([0-9]) ([^\s]+) [0-9] (.+?)(?: (fa-[a-zA-Z0-9-]+))?$/;
+/**
+ * Loads raw navigation data from the HTML element.
+ * @returns {string} The navigation data as a string.
+ */
 
 function loadData() {
   return document.getElementById('nav-mobile__data').innerHTML;
 }
+/**
+ * Loads URL data from the HTML element.
+ * @returns {string} The current page URL.
+ */
+
 
 function loadUrls() {
   return document.getElementById('page_urls').innerHTML;
 }
+/**
+ * Extracts the path from a full URL by removing the domain.
+ * @param {string} url - The full URL.
+ * @returns {string} The extracted path.
+ */
+
 
 function getPath(url) {
   return url.replace(/^https?:\/\/[^/]*/, '');
 }
+/**
+ * Determines how well a given path matches the current URL.
+ * @param {string} path - The path to compare.
+ * @param {string} currentPath - The current URL path.
+ * @returns {number} - 2 for an exact match, 1 for a partial match, 0 for no match.
+ */
+
 
 function matchLevel(path, currentPath) {
   if (path === currentPath) {
-    return 2;
+    return 2; // Exact match
   } else if (currentPath.indexOf(path + '/') === 0) {
-    return 1;
+    return 1; // Partial match (parent path)
   } else {
-    return 0;
+    return 0; // No match
   }
 }
+/**
+ * Parses the navigation data into a hierarchical tree structure.
+ * @param {string} data - The raw navigation data.
+ * @param {string} currentUrl - The current URL to determine active links.
+ * @returns {Object} - The navigation tree and the current navigation path.
+ */
+
 
 function parseNav(data, currentUrl) {
   var tree = {
@@ -20715,18 +20745,22 @@ function parseNav(data, currentUrl) {
     url: null,
     type: null,
     level: null,
-    children: []
+    children: [],
+    icon: null
   };
   var currentPath = getPath(currentUrl);
-  var ancestors = [];
+  var ancestors = []; // Stores ancestor nodes to maintain hierarchy
+  // Process each line of navigation data
+
   data.split(/\r?\n/).forEach(function (line) {
     var match = line.match(PARSE_REGEX);
 
     if (match) {
-      var _match = _slicedToArray(match, 4),
+      var _match = _slicedToArray(match, 5),
           levelStr = _match[1],
           url = _match[2],
-          name = _match[3];
+          name = _match[3],
+          icon = _match[4];
 
       var level = parseInt(levelStr);
       var type = matchLevel(getPath(url), currentPath);
@@ -20736,8 +20770,10 @@ function parseNav(data, currentUrl) {
         url: url,
         name: name,
         children: [],
-        index: 0
-      };
+        index: 0,
+        icon: icon || null // Icon is optional
+
+      }; // Add item to the tree hierarchy based on its level
 
       if (level > 0) {
         var parent = ancestors[level - 1];
@@ -20747,9 +20783,10 @@ function parseNav(data, currentUrl) {
         tree = item;
       }
 
-      ancestors[level] = item;
+      ancestors[level] = item; // Store reference to maintain hierarchy
     }
-  });
+  }); // Find the current navigation path based on the active page
+
   var currentHead = tree;
   var current = [];
 
@@ -20763,16 +20800,23 @@ function parseNav(data, currentUrl) {
     current: current
   };
 }
+/**
+ * Finds the current active navigation item from a list.
+ * @param {Array} list - The list of navigation items.
+ * @returns {Object|null} - The active navigation item or null if none found.
+ */
+
 
 function findCurrent(list) {
   for (var i = 0; i < list.length; i++) {
     if (list[i].type > 0) {
-      return list[i];
+      return list[i]; // Return the first matching active item
     }
   }
 
-  return null;
-}
+  return null; // No active item found
+} // Parse navigation data and export the resulting tree and active path
+
 
 var _parseNav = parseNav(loadData(), loadUrls()),
     tree = _parseNav.tree,
@@ -20826,6 +20870,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
+/**
+ * Recursively assigns unique IDs to each tree node based on hierarchy.
+ * @param {Object} tree - The current node in the tree.
+ * @param {Object} map - A mapping of node IDs to nodes.
+ * @param {string|null} parentId - The ID of the parent node.
+ */
 
 function prepareTreeIds(tree, map) {
   var parentId = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
@@ -20852,6 +20902,15 @@ function searchParams() {
   });
   return (params.length > 0 ? '?' : '') + params.join('&');
 }
+/**
+ * Initializes the vertical menu helper.
+ * @param {jQuery} menuContainer - The container element for the menu.
+ * @param {Object} tree - The menu structure.
+ * @param {Array} defaultOpen - List of default open menu items.
+ * @param {boolean} scroll - Whether to enable scrolling to the active item.
+ * @param {number} [maxSiblings=0] - Maximum number of sibling items to display.
+ */
+
 
 var VerticalMenuHelper =
 /*#__PURE__*/
@@ -20942,6 +21001,11 @@ function () {
     value: function closeAll() {
       this.menuContainer.find('.open').removeClass('open');
     }
+    /**
+     * Prepares and appends the HTML structure for a menu item.
+     * @param {Object} item - The menu item.
+     */
+
   }, {
     key: "prepareItemElement",
     value: function prepareItemElement(item) {
@@ -20951,12 +21015,29 @@ function () {
         if (item.name) {
           element.addClass("vertical-menu vertical-menu--l".concat(item.level));
           var header = jquery__WEBPACK_IMPORTED_MODULE_5___default()('<div></div>').addClass('vertical-menu__header').appendTo(element);
-          jquery__WEBPACK_IMPORTED_MODULE_5___default()('<a class="vertical-menu__page-link"></a>').addClass("vertical-menu__page-link--t".concat(item.type)).attr('href', item.url + this.searchQueryStr).append(jquery__WEBPACK_IMPORTED_MODULE_5___default()('<span class="vertical-menu__page-link__label"></span>').html(item.name)).appendTo(header);
+          var pageLink;
+
+          if (item.url && item.url !== '#') {
+            // Regular clickable link
+            pageLink = jquery__WEBPACK_IMPORTED_MODULE_5___default()('<a class="vertical-menu__page-link"></a>').addClass("vertical-menu__page-link--t".concat(item.type)).attr('href', item.url + this.searchQueryStr);
+          } else if (item.url === '#' && item.children.length > 0) {
+            // If URL is #, and has children make it a toggle button
+            pageLink = jquery__WEBPACK_IMPORTED_MODULE_5___default()('<a role="button" href="#" class="vertical-menu__page-link"></a>').attr('data-toggle', item.id);
+          } else {
+            pageLink = jquery__WEBPACK_IMPORTED_MODULE_5___default()('<span class="vertical-menu__page-link"></span>').addClass("vertical-menu__page-link--t".concat(item.type));
+          } // Add Font Awesome icon before text
+
+
+          if (item.icon) {
+            var iconElement = jquery__WEBPACK_IMPORTED_MODULE_5___default()("<span class=\"fa ".concat(item.icon, " vertical-menu__icon\" aria-hidden=\"true\"></span>"));
+            pageLink.append(iconElement);
+          }
+
+          pageLink.append(jquery__WEBPACK_IMPORTED_MODULE_5___default()('<span class="vertical-menu__page-link__label"></span>').html(item.name)).appendTo(header);
 
           if (item.level > this.rootLevel && item.children.length > 0) {
-            var childrenToggle = jquery__WEBPACK_IMPORTED_MODULE_5___default()('<a role="button" href="#" class="vertical-menu__toggle-link"><span class="fa" aria-hidden="true"></span></a>');
-            childrenToggle = childrenToggle.attr('data-toggle', item.id);
-            childrenToggle.appendTo(header);
+            var childrenToggle = jquery__WEBPACK_IMPORTED_MODULE_5___default()("<a role=\"button\" href=\"#\" class=\"vertical-menu__toggle-link\">\n                        <span class=\"fa\" aria-hidden=\"true\"></span></a>");
+            childrenToggle.attr('data-toggle', item.id).appendTo(header);
           }
         }
 
