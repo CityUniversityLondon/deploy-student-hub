@@ -7439,6 +7439,10 @@ span.vertical-menu__page-link {
     border-bottom: 4px solid #555555;
 }
 
+.nav-mobile {
+    min-width: 80px;
+}
+
 .header:not(.header-v25) .nav-mobile {
     /** TODO: Is min height necessary? **/
     float: left;
@@ -7450,7 +7454,6 @@ span.vertical-menu__page-link {
     left: 33.333%;
     width: 8.333%;
     align-self: center;
-    min-width: 80px;
 }
 
 @supports (display: flex) {
