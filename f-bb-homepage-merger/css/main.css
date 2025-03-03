@@ -7450,6 +7450,7 @@ span.vertical-menu__page-link {
     left: 33.333%;
     width: 8.333%;
     align-self: center;
+    min-width: 80px;
 }
 
 @supports (display: flex) {
