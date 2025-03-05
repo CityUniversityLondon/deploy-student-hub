@@ -7440,12 +7440,12 @@ span.vertical-menu__page-link {
 }
 
 .nav-mobile {
-    min-width: 20px;
+    min-width: 1rem;
 }
 
 @media (min-width: 321px) {
     .nav-mobile {
-        min-width: 80px;
+        min-width: 5rem;
     }
 }
 
