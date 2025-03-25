@@ -20159,7 +20159,6 @@ function handleSubmenuNavigation(event, submenu, button) {
 }
 
 function launch(el) {
-  console.log('launch dropdown menu');
   var button = el.querySelector('.dd-menu__toggle');
   var submenu = el.querySelector('.dd-menu__sub');
   if (!button || !submenu) return;
