@@ -7251,6 +7251,7 @@ a.vertical-menu__toggle-link {
     display: block;
     vertical-align: baseline;
     line-height: 1.5;
+    z-index: 1;
 }
 
 a.vertical-menu__page-link:hover, a.vertical-menu__page-link:focus, a.vertical-menu__page-link:active,
@@ -7311,6 +7312,8 @@ span.vertical-menu__page-link {
 
 .vertical-menu--l1 > .vertical-menu__header > .vertical-menu__page-link {
     padding: 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .vertical-menu__page-link.vertical-menu__page-link--t2 {
@@ -15697,6 +15700,10 @@ input[type='checkbox']:checked + .header-toggle .header-toggle__content {
     font-size: 1rem;
 }
 
+.left-hand-navigation__menu > .vertical-menu--l1 > .vertical-menu__header + ul {
+    overflow: visible;
+}
+
 .left-hand-navigation-grid {
     width: 100%;
     margin-left: auto;
@@ -15921,6 +15928,8 @@ input[type='checkbox']:checked + .header-toggle .header-toggle__content {
 
 .left-hand-navigation--jsinit .vertical-menu--l2 > .vertical-menu__header > .vertical-menu__page-link {
     padding: 0.5rem 1rem;
+    position: relative;
+    z-index: 1;
 }
 
 .pathway-card {
