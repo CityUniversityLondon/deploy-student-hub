@@ -19879,8 +19879,10 @@ table tbody > tr > td:hover {
     outline-offset: 0;
 }
 
-.quick-links .quick-link a span {
+.quick-links .quick-link a span:not([class]) {
     word-break: break-all;
+    border-bottom: initial;
+    text-decoration: underline;
 }
 
 .quick-links .quick-link .fa, .quick-links .quick-link .url-slide--right .url-slide__icon, .url-slide--right .quick-links .quick-link .url-slide__icon, .quick-links .quick-link .media-block .video-preview__button:before, .media-block .quick-links .quick-link .video-preview__button:before, .quick-links .quick-link .accordion__content__heading-anchor__icon, .quick-links .quick-link .accordion.accordion--simple .accordion__content__heading-anchor .accordion__content__heading-anchor__icon, .accordion.accordion--simple .accordion__content__heading-anchor .quick-links .quick-link .accordion__content__heading-anchor__icon, .quick-links .quick-link .js .tabs__content__heading-anchor__icon, .js .quick-links .quick-link .tabs__content__heading-anchor__icon, .quick-links .quick-link .js .accordion-tabs__content__heading-anchor__icon, .js .quick-links .quick-link .accordion-tabs__content__heading-anchor__icon, .quick-links .quick-link .header-toggle--menu .header-toggle__icon, .header-toggle--menu .quick-links .quick-link .header-toggle__icon, .quick-links .quick-link .header-toggle--search .header-toggle__icon, .header-toggle--search .quick-links .quick-link .header-toggle__icon, .quick-links .quick-link .popup-def-list-group__prevnext__prev .popup-def-list-group__prevnext__prev__icon, .popup-def-list-group__prevnext__prev .quick-links .quick-link .popup-def-list-group__prevnext__prev__icon, .quick-links .quick-link .popup-def-list-group__prevnext__next .popup-def-list-group__prevnext__next__icon, .popup-def-list-group__prevnext__next .quick-links .quick-link .popup-def-list-group__prevnext__next__icon, .quick-links .quick-link .dialog__box__heading__close__icon, .quick-links .quick-link .video-banner__play span, .video-banner__play .quick-links .quick-link span {
