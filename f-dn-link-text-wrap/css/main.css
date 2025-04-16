@@ -19880,7 +19880,7 @@ table tbody > tr > td:hover {
 }
 
 .quick-links .quick-link a span:not([class]) {
-    word-break: break-all;
+    text-wrap: wrap;
     border-bottom: initial;
     text-decoration: underline;
 }
