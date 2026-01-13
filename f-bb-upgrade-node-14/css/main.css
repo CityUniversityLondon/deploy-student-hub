@@ -5671,8 +5671,9 @@ span.vertical-menu__page-link {
     transform: translateX(0); } }
 
 .nav-mobile__toggle-label {
-  -ms-user-select: none;
-      user-select: none;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-touch-callout: default;
   -webkit-touch-callout: none;
   background-color: #0c0c0e;
@@ -8942,8 +8943,9 @@ input.header-toggle-input {
   transition: background-color 0.2s ease 0s, color 0.2s ease 0s;
   display: inline-block; }
   .header-toggle > label {
-    -ms-user-select: none;
-        user-select: none;
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none; }
   input[type='checkbox']:checked + .header-toggle {
@@ -9671,8 +9673,9 @@ input.header-toggle-input {
   color: #0c0c0e;
   display: inline-block;
   border-bottom-width: 0;
-  -ms-user-select: none;
-      user-select: none;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   -webkit-touch-callout: default;
   -webkit-touch-callout: none;
   color: inherit;
@@ -11297,6 +11300,7 @@ input.header-toggle-input {
   box-shadow: 0 8px 16px 0 rgba(12, 12, 14, 0.2);
   align-self: flex-start;
   font-size: 14px;
+  height: -moz-fit-content;
   height: fit-content;
   margin-bottom: 1rem;
   margin-top: 0.5rem;
@@ -11950,8 +11954,9 @@ input.header-toggle-input {
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    -ms-user-select: none;
-        user-select: none;
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     -webkit-touch-callout: default;
     -webkit-touch-callout: none;
     content: '';
@@ -12627,8 +12632,9 @@ table {
   .student-news-finder .fade-out {
     opacity: 0;
     pointer-events: none;
-    -ms-user-select: none;
-        user-select: none;
+    -webkit-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     animation: fade-out 1s linear; }
   .student-news-finder .student-news-finder__results {
     width: 100%;
@@ -13074,8 +13080,9 @@ table {
 .student-events-finder .fade-out {
   opacity: 0;
   pointer-events: none;
-  -ms-user-select: none;
-      user-select: none;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   animation: fade-out 1s linear; }
 
 .student-events-finder .student-events-finder__results {
@@ -13543,8 +13550,9 @@ table {
 .service-finder-nest .fade-out {
   opacity: 0;
   pointer-events: none;
-  -ms-user-select: none;
-      user-select: none;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   animation: fade-out 1s linear; }
 
 .service-finder .service-finder__results,
@@ -15758,8 +15766,9 @@ table {
 .noticeboard-finder .fade-out {
   opacity: 0;
   pointer-events: none;
-  -ms-user-select: none;
-      user-select: none;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   animation: fade-out 1s linear; }
 
 .noticeboard-finder .noticeboard-finder__results {
@@ -16753,8 +16762,9 @@ table {
 .induction-timetable-finder-nest .fade-out {
   opacity: 0;
   pointer-events: none;
-  -ms-user-select: none;
-      user-select: none;
+  -webkit-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   animation: fade-out 1s linear; }
 
 .induction-timetable-finder .induction-timetable-finder__results,
