@@ -2788,6 +2788,7 @@ img {
   border: 0; }
 
 html {
+  background-color: green !important;
   box-sizing: border-box;
   background-color: #fafafa;
   min-height: 100%;
