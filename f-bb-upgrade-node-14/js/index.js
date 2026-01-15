@@ -28056,6 +28056,7 @@ function tryCatch(f) {
   }
 }
 function launchPattern(pattern) {
+  console.log('testing');
   if (typeof pattern === 'function') {
     tryCatch(pattern);
   } else if (pattern.className) {

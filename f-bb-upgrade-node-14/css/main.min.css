@@ -2802,6 +2802,7 @@ html {
 
 body {
   background-color: #ffffff;
+  background-color: green !important;
   color: #1e1e1e; }
   @media (max-width: 900px) {
     body {
