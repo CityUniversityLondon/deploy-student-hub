@@ -25811,7 +25811,7 @@ function openModalDialog(title, content) {
     });
   }
   dlg.focus();
-  current.focusTrap = Object(focus_trap__WEBPACK_IMPORTED_MODULE_2__["default"])(dlg[0]).activate();
+  current.focusTrap = Object(focus_trap__WEBPACK_IMPORTED_MODULE_2__["createFocusTrap"])(dlg[0]).activate();
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('html').addClass('no-scroll');
 }
 
