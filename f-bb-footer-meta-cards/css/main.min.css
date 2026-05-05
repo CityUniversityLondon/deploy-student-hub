@@ -12016,6 +12016,9 @@ input.header-toggle-input {
   @media (max-width: 500px) {
     .footer-meta__card {
       margin-bottom: 1rem; } }
+  @media (min-width: 501px) {
+    .footer-meta__card:nth-child(n+3) {
+      margin-top: 1rem; } }
   @supports (display: flex) {
     .footer-meta__card {
       float: none;
